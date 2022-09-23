@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
+import { TopService } from '../services/top.service';
 
 @Component({
   selector: 'app-albumes',
   templateUrl: './albumes.component.html',
   styleUrls: ['./albumes.component.css']
 })
-export class AlbumesComponent implements OnInit {
+export class AlbumesComponent {
 
-  constructor() { }
+  public respuestaServicios:any[]=[]
 
-  ngOnInit(): void {
-  }
+  constructor(public peticion:TopService) {
+
+    //como utilizar los datos qeu legan de un servicio
+
+    this.peticion.buscar()
+    .subscribe(respuesta=>{
+
+      this.respuestaServicios=respuesta.datos
+      console.log(this.respuestaServicios)
+    })
+   }
+
+
 
 }
