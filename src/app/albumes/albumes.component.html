@@ -1,29 +1,26 @@
-
 <app-menu></app-menu>
 
-<div class="row borde" *ngFor="let respuestaServicio of respuestaServicios">
+<div class="container">
 
-    <div class="col-6 borde">
+  <div class="row row-cols-1 row-cols-md-4 g-4 mx-3 my-5">
 
-        <img src="{{respuestaServicio.imagenes}}" alt="..." class="borde">
 
+
+      <div style="width: 18rem;"  *ngFor="let cancion  of  canciones" >
+        <div class="col card  my-5 mx-3" style="height: 560px; ;">
+
+        <img src="{{cancion.album.images[1].url}}" alt="" class="card-img-top">
+        <audio  src="{{cancion.preview_url}}" controls="controls"></audio>
+        <div class="card-body">
+          <h5 class="card-title">{{cancion.name}}</h5>
+          <br>
+          <h6>Fecha De Lanzamineto: {{cancion.album.release_date}}</h6>
+        </div>
+      </div>
     </div>
-    <div class="col-6">
-
-        <h5 class="card-title borde">{{respuestaServicio.nombre}}</h5>
-
-    </div>
+  </div>
 </div>
 
 
-    <!-- <div class="col card my-5 mx-3" >
-      
-      <div class="card-body">
-        
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    -->
 
 <app-footer></app-footer>

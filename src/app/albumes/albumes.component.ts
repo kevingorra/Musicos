@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import { TopService } from '../services/top.service';
+import { SpotifyService } from '../services/spotify.service';
 
 @Component({
   selector: 'app-albumes',
@@ -8,20 +8,20 @@ import { TopService } from '../services/top.service';
 })
 export class AlbumesComponent {
 
-  public respuestaServicios:any[]=[]
 
-  constructor(public peticion:TopService) {
 
-    //como utilizar los datos qeu legan de un servicio
+  public canciones:any[]=[]
 
-    this.peticion.buscar()
-    .subscribe(respuesta=>{
+  constructor(public peticion:SpotifyService) {
 
-      this.respuestaServicios=respuesta.datos
-      console.log(this.respuestaServicios)
-    })
+    this.peticion.traerCanciones()
+    .subscribe(respuesta=>{console.log(respuesta)
+    this.canciones=respuesta.tracks
+  console.log(this.canciones)})
+
+    }
    }
 
 
 
-}
+
