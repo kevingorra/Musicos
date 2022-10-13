@@ -1,6 +1,9 @@
 <app-menu></app-menu>
 
 <div class="container">
+  <br><br>
+
+  <h1>Top Tracks</h1>
 
   <div class="row row-cols-1 row-cols-md-4 g-4 mx-3 my-5">
 
@@ -10,7 +13,7 @@
         <div class="col card  my-5 mx-3" style="height: 560px; ;">
 
         <img src="{{cancion.album.images[1].url}}" alt="" class="card-img-top">
-        <audio  src="{{cancion.preview_url}}" controls="controls"></audio>
+        <audio  src="{{cancion.preview_url}}" controls="controls" class="w-100"></audio>
         <div class="card-body">
           <h5 class="card-title">{{cancion.name}}</h5>
           <br>
